@@ -6,7 +6,7 @@
 #
 
 # first time, in terminal: pip install flask
-# to run website, in terminal (windows):  flask --app app --debug run
+# to run website, in terminal (windows and pycharm):  flask --app app --debug run
 # flask is sensitive to file structure and names
 
 from flask import Flask, render_template
