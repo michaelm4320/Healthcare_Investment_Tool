@@ -1,10 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title> HCIT </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="style.css">
+	<title>AdminSite</title>
 </head>
 <body>
-We love HealthCare!! and MOney
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+        <li>
+            <a href="#" class="intevations">
+                <img src="intevations.png" alt="">
+            </a>
+        </li>
+		<ul class="side-menu">
+            
+			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
+			<li>
+				<a href="#"><i class='bx bxs-bulb icon' ></i> Menu Item </i></a>
+			</li>
+			<li><a href="#"><i class='bx bxs-cog icon' ></i> Settings</a></li>
+		</ul>
+	</section>
+	<!-- SIDEBAR END -->
+
+	<!-- NAVBAR START -->
+	<section id="content">
+		<!-- NAVBAR END -->
+
+		<!-- MAIN START -->
+		<main>
+			<h1 class="title">Dashboard</h1>
+			<ul class="breadcrumbs">
+				<li><a href="#">Home</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">Dashboard</a></li>
+			</ul>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Sales Report</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="chart"></div>
+					</div>
+				</div>
+			</div>
+			<div class="content-table">
+				<div class="head">
+					<h3>Population Growth</h3>
+						<table>
+							<Thead>
+								<tr>
+									<th style="width: 400px;">Month</th>
+									<th style="width: 400px;">Growth</th>
+									<th style="width: 400px;">Percent</th>
+									<th style="width: 400px;">ETC</th>
+								</tr>
+							</Thead>
+							<tr>
+								<td>January</td>
+								<td>100</td>
+								<td>10%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>February</td>
+								<td>200</td>
+								<td>20%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>March</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>April</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>May</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>June</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>July</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>August</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>Spetember</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>October</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>November</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>December</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+						</table>
+					</div>
+			</div>
+		</main>
+		<!-- MAIN END -->
+	</section>
+
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+	<script src="script.js"></script>
 </body>
 </html>
