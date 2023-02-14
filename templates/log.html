@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+</head>
+<body>
+   <form method="post" style="text-align:center;">
+        <label>Username</label>
+        <br>
+        <input type="text" name="username"
+               placeholder="Username"
+               value="{{ request.form['username'] }}">
+        <br>
+
+        <label>Password</label>
+        <br>
+       <input type="text" name="password"
+               placeholder="Password"
+               value="{{ request.form['password'] }}">
+       <br>
+       <br>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
