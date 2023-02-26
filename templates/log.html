@@ -12,13 +12,22 @@
                placeholder="Username"
                value="{{ request.form['username'] }}">
         <br>
+{% block content %}
+<div style="color:red;">
+    {{ErrU}}
+</div>
 
         <label>Password</label>
         <br>
-       <input type="text" name="password"
+       <input type="password" name="password"
                placeholder="Password"
                value="{{ request.form['password'] }}">
        <br>
+
+<div style="color:red;">
+    {{ErrP}}
+</div>
+{% endblock %}
        <br>
         <button type="submit">Submit</button>
     </form>
