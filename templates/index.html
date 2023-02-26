@@ -41,7 +41,7 @@
 			<div class="data">
 				<div class="content-data">
 					<div class="head">
-						<h3>Sales Report</h3>
+						<h3>Chart</h3>
 						<div class="menu">
 							<i class='bx bx-dots-horizontal-rounded icon'></i>
 							<ul class="menu-link">
@@ -68,78 +68,16 @@
 									<th style="width: 400px;">ETC</th>
 								</tr>
 							</Thead>
-							<tr>
-								<td>January</td>
-								<td>100</td>
-								<td>10%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>February</td>
-								<td>200</td>
-								<td>20%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>March</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>April</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>May</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>June</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>July</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>August</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>Spetember</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>October</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>November</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>December</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
+							<tbody>
+								<tr>
+									{% for value in values %}
+									<td>{{value.month}}</td>
+									<td>{{value.growth}}</td>
+									<td>{{value.percent}}%</td>
+									<td>{{value.etc}}</td>
+								</tr>
+								{% endfor %}
+							</tbody>
 						</table>
 					</div>
 			</div>
