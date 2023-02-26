@@ -1,0 +1,8 @@
+alexpatterson2019@gmail.com
+pbkdf2:sha256:260000$4zMgBEjtDUoDPbYJ$6603659f9ac96b1654af2d9d925df611787724756b52ce7aebb7005cedf51088
+hotplate@yahoo.com
+pbkdf2:sha256:260000$7LAAyEkFAQe1hZua$b4e1b63fc001fb41445666a1a177d0faad087822ec13ebf30565011981e84a21
+cbat@arrow.com
+pbkdf2:sha256:260000$I3gDGOVebeGrR1M3$329340c1be609c60cc70ff0fcf4729023c713b24a19ca47fb7798c186b7f1cfc
+cbt@arrow.com
+pbkdf2:sha256:260000$f3cIykVI5o0xS8ra$3e886f67e554b4b48c0d428dfa97cb967d581785cbbcb9e232157e4ca965ba97
