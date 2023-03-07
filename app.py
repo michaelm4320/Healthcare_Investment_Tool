@@ -68,8 +68,9 @@ def sign():
     if request.method == "GET":
         return render_template('sign.html')
 
-
-
+#Uncomment if you want to run without using terminal
+#if __name__ == '__main__':
+#    app.run(debug=True)
 
 
 
