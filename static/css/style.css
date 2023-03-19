@@ -36,6 +36,104 @@ a {
 li {
 	list-style: none;
 }
+/* LOGIN START */
+.login-container {
+	padding: 40px;
+	text-align: center;
+    border-radius: 10px;
+    background: var(--light);
+	box-shadow: 4px 4px 16px rgba(0, 0, 0, .05);
+	max-width: 350px; /* set the maximum width to 400 pixels, this adjusts width */
+	height: 500px;
+
+    /* center horizontally */
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+
+    /* center vertically */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.signin-header {
+  font-size: 2em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Text box style */
+input[type="username"], input[type="password"] {
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px; /*adjusts text box spacing between text boxes */
+  width: 100%;
+  max-width: calc(100% - -50px); /* limit the maximum width to 100% minus left and right padding and border */
+}
+
+.input-icons {
+  position: relative;
+  font-size: 1.2em;
+  align-items: center;
+}
+
+.input-icons input[type="username"] { /* adjusts the username input text to the right */
+  padding-left: 40px;
+}
+.input-icons input[type="password"] { /* adjusts the password input text to the right */
+  padding-left: 40px;
+}
+
+
+.login-container .input-icons .user-icon {
+  position: absolute;
+  transform: translate(5px, 10%);
+  padding: 10px;
+}
+
+.login-container .input-icons .lock-icon {
+  position: absolute;
+  transform: translate(1px, 75%);
+  padding: 10px;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: -20px; /* adjust the spacing between label and input box */
+  text-align: left;
+  margin-right: 200px; /* adjusts position left or right of label */
+  /* margin-top: -30px;  adjusts all elements inside text box vertically */
+}
+
+
+.errorU-message {
+  font-size: 14px;
+  color: red;
+}
+
+.errorP-message {
+  font-size: 14px;
+  color: red;
+}
+
+button {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 10px 110px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* LOGIN END */
 
 /* SIDEBAR START */
 .intevations{
@@ -357,3 +455,4 @@ main .btn-send:hover {
 		display: none;
 	}
 }
+

@@ -4,22 +4,28 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<link rel="stylesheet" href="../static/css/style.css">
-	<title>HCIT</title>
+	<link rel="stylesheet" href="style.css">
+	<title>AdminSite</title>
 </head>
 <body>
+ {% block content %}
+ <div>
+ 	{{Radiant}}
+	 {{Awesome}}
+ </div>
+ {% endblock %}
 	<!-- SIDEBAR -->
 	<section id="sidebar">
         <li>
             <a href="#" class="intevations">
-                <img src="../static/intevations.png" alt="">
+                <img src="intevations.png" alt="">
             </a>
         </li>
 		<ul class="side-menu">
-            
+
 			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
 			<li>
-				<a href="#"><i class='bx bxs-bulb icon' ></i> Menu Item </i></a>
+				<a href="#"><i class='bx bxs-bulb icon' ></i> Menu Item</a>
 			</li>
 			<li><a href="#"><i class='bx bxs-cog icon' ></i> Settings</a></li>
 		</ul>
@@ -68,16 +74,78 @@
 									<th style="width: 400px;">ETC</th>
 								</tr>
 							</Thead>
-							<tbody>
-								{% for value in values %}
-									<tr>
-										<td>{{value.month}}</td>
-										<td>{{value.growth}}</td>
-										<td>{{value.percent}}%</td>
-										<td>{{value.etc}}</td>
-									</tr>
-								{% endfor %}
-							</tbody>
+							<tr>
+								<td>January</td>
+								<td>100</td>
+								<td>10%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>February</td>
+								<td>200</td>
+								<td>20%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>March</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>April</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>May</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>June</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>July</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>August</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>Spetember</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>October</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>November</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>December</td>
+								<td>300</td>
+								<td>30%</td>
+								<td>0</td>
+							</tr>
 						</table>
 					</div>
 			</div>
@@ -86,6 +154,6 @@
 	</section>
 
 	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-	<script src="../static/js/script.js"></script>
+	<script src="script.js"></script>
 </body>
 </html>
