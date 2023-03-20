@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<link rel="stylesheet" href="style.css">
-	<title>AdminSite</title>
+	<link rel="stylesheet" href="static/css/style.css" type="text/css">
+	<title>Dashboard</title>
 </head>
 <body>
  {% block content %}
@@ -18,7 +18,7 @@
 	<section id="sidebar">
         <li>
             <a href="#" class="intevations">
-                <img src="intevations.png" alt="">
+                <img src="../static/intevations.png" alt="">
             </a>
         </li>
 		<ul class="side-menu">
@@ -34,6 +34,33 @@
 
 	<!-- NAVBAR START -->
 	<section id="content">
+				<nav>
+					<h1 class="welcome-message">Welcome (User)!</h1>
+			<!--<i class='bx bx-menu toggle-sidebar' ></i>
+			<form action="#">
+				<div class="form-group">
+					<input type="text" placeholder="Search...">
+					<i class='bx bx-search icon' ></i>
+				</div>
+			</form>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-bell icon' ></i>
+				<span class="badge">5</span>
+			</a>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-message-square-dots icon' ></i>
+				<span class="badge">8</span>
+			</a>
+			<span class="divider"></span>-->
+			<div class="profile">
+				<img src="https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg" alt="">
+				<ul class="profile-link">
+					<li><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<!--<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>-->
+					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+			</div>
+		</nav>
 		<!-- NAVBAR END -->
 
 		<!-- MAIN START -->
@@ -74,78 +101,16 @@
 									<th style="width: 400px;">ETC</th>
 								</tr>
 							</Thead>
-							<tr>
-								<td>January</td>
-								<td>100</td>
-								<td>10%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>February</td>
-								<td>200</td>
-								<td>20%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>March</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>April</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>May</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>June</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>July</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>August</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>Spetember</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>October</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>November</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>December</td>
-								<td>300</td>
-								<td>30%</td>
-								<td>0</td>
-							</tr>
+							<tbody>
+								{% for value in values %}
+									<tr>
+										<td>{{value.month}}</td>
+										<td>{{value.growth}}</td>
+										<td>{{value.percent}}%</td>
+										<td>{{value.etc}}</td>
+									</tr>
+								{% endfor %}
+							</tbody>
 						</table>
 					</div>
 			</div>
@@ -154,6 +119,6 @@
 	</section>
 
 	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-	<script src="script.js"></script>
+	<script src="../static/js/script.js"></script>
 </body>
 </html>
