@@ -10,13 +10,15 @@
 <body>
 <div class="profile-page">
     <form class="form-horizontal">
-        <div class="panel-default">
+        <div class="panel-avatar">
             <div class="profile-avatar">
                 <img src="https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg"
                      class="img-circle profile-avatar" alt="User avatar">
             </div>
+            <p class="user-name">Frank Brook</p>
+            <p class="user-email">Frank@email.com</p>
         </div>
-        <div class="panel-default">
+        <div class="panel-user-info">
             <div class="panel-heading">
                 <h4 class="panel-title">User info</h4>
             </div>
@@ -35,22 +37,23 @@
                 <label class="first-name">First Name</label>
                 <input type="text" class="form-control">
             </div>
-        </div>
-        <div class="form-group">
-            <label class="last-name">Last Name</label>
-            <input type="text" class="form-control">
+            <div class="form-group">
+                <label class="last-name">Last Name</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="organization">Organization</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label class="title-position">Title</label>
+                <input type="text" class="form-control">
+            </div>
         </div>
 
-        <div class="form-group">
-            <label class="organization">Organization</label>
-            <input type="text" class="form-control">
-        </div>
 
-        <div class="form-group">
-            <label class="title-position">Title</label>
-            <input type="text" class="form-control">
-        </div>
-        <div class="panel-default">
+        <div class="panel-contact-info">
             <div class="panel-heading">
                 <h4 class="panel-title">Contact info</h4>
             </div>
@@ -64,11 +67,18 @@
                 <label class="control-label">Mobile number</label>
                 <input type="tel" class="form-control">
             </div>
+            <div class="form-group">
+                <label class="control-label">E-mail address</label>
+                <input type="email" class="form-control">
+            </div>
+            <div class="button-container">
+                <button class="cancel-button">Cancel</button>
+                <button class="save-button">Save Changes</button>
+            </div>
+            <a href="index.html" class="return-link">Return home</a>
         </div>
-        <div class="form-group">
-            <label class="control-label">E-mail address</label>
-            <input type="email" class="form-control">
-        </div>
+
+
     </form>
 </div>
 </body>

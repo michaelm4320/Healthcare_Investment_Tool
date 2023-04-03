@@ -565,11 +565,11 @@ main .btn-send:hover {
 /* MAIN  END*/
 
 /* PROFILE START */
-.profile-page {
+.panel-user-info {
   max-width: 600px;
   margin: 0 auto;
-  margin: 40px auto 0;
-  padding: 10px;
+  margin: 30px auto 0;
+  padding: 30px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -577,13 +577,52 @@ main .btn-send:hover {
   margin-bottom: 40px;
 }
 
+.panel-contact-info {
+  max-width: 600px;
+  margin: 0 auto;
+  margin: 30px auto 0;
+  padding: 30px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
 /* profile image */
-.profile-avatar {
-  width: 160px;
-  height: 120px;
-  margin: 0px auto 0;
+.panel-avatar {
+  max-width: 600px;
+  margin: 0 auto;
+  margin: 30px auto 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
+.profile-avatar img {
+  display: block;
+  margin: 30px auto 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding-bottom: 0px;
+  margin-bottom: 40px;
+}
+
+.user-name {
+  font-size: 24px;
+  margin-top: 10px;
+  line-height: 0.5;
+}
+
+.user-email {
+  margin-top: 10px;
+  line-height: 2.0;
+}
 
 /* panel titles */
 .panel-title {
@@ -621,6 +660,48 @@ select.form-control {
 .form-control {
     width: 100%;
 }
+
+.user-name {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.cancel-button {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 20px;
+  border-radius: 7px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.save-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.return-link {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-decoration: underline;
+  margin-top: 30px;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
 /* PROFILE END */
 
 @media screen and (max-width: 768px) {
