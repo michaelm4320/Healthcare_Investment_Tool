@@ -3,38 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Log In</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="static/css/style.css" type="text/css">
 </head>
 <body>
-<div class="login-container">
-    <form method="post" style="text-align:center;">
-        <h1 class="signin-header">Sign In</h1>
-        <label class="username-label">Username</label>
+   <form method="post" style="text-align:center;">
+        <label>Username</label>
         <br>
-        <div class="input-icons">
-            <i class='bx bxs-user user-icon' ></i>
-            <input type="username" name="username"
-                   placeholder="Username"
-                   value="{{ request.form['username'] }}">
-            <br>
-            {% block content %}
-            <div class="errorU-message">{{ErrU}}</div>
-
-            <i class='bx bxs-lock-alt lock-icon' ></i>
-            <label class="password-label">Password</label>
-            <br>
-            <input type="password" name="password"
-                   placeholder="Password"
-                   value="{{ request.form['password'] }}">
-            <br>
-        </div>
-        <div class="errorP-message">{{ErrP}}</div>
-        {% endblock %}
+        <input type="text" name="username"
+               placeholder="Username"
+               value="{{ request.form['username'] }}">
         <br>
-        <button type="sign-in">Sign In</button>
-    </form>
+{% block content %}
+<div style="color:red;">
+    {{ErrU}}
 </div>
+
+        <label>Password</label>
+        <br>
+       <input type="password" name="password"
+               placeholder="Password"
+               value="{{ request.form['password'] }}">
+       <br>
+
+<div style="color:red;">
+    {{ErrP}}
+</div>
+{% endblock %}
+       <br>
+        <button type="submit">Submit</button>
+    </form>
+
 </body>
 </html>
