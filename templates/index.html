@@ -10,8 +10,8 @@
 <body>
  {% block content %}
  <div>
- 	{{Radiant}}
-	 {{Awesome}}
+<!-- 	{{Radiant}}
+	 {{Awesome}}-->
  </div>
  {% endblock %}
 	<!-- SIDEBAR -->
@@ -35,7 +35,7 @@
 	<!-- NAVBAR START -->
 	<section id="content">
 				<nav>
-					<h1 class="welcome-message">Welcome (User)!</h1>
+					<h1 class="welcome-message">Welcome!</h1>
 			<div class="profile">
 				<img src="https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg" alt="">
 				<ul class="profile-link">
@@ -72,6 +72,12 @@
 					</div>
 				</div>
 			</div>
+			<div class="age-chart">
+				<div id="age-chart"></div>
+			</div>
+			<div class="insurance-chart">
+				<div id="insurance-chart"></div>
+			</div>
 			<div class="content-table">
 				<div class="head">
 					<h3>Population Growth</h3>
@@ -102,6 +108,7 @@
 	</section>
 
 	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script type="text/javascript"> let test = {{ test|tojson }}</script> <!--Converts to json from python-->
 	<script src="../static/js/script.js"></script>
 </body>
 </html>

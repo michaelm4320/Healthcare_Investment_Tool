@@ -13,14 +13,15 @@ from flask import Flask, render_template, request, url_for, flash, redirect, ses
 import random
 import math
 import authentication
+from PythonToJson import row
 
 app = Flask(__name__)
 
 key = math.floor(random.random() * 23456)
 app.config['SECRET_KEY'] = f'{key}'
 
-test_variable1 = "Healthcare Investment Tool"
-test_variable2 = 6725432
+#test_variable1 = "Healthcare Investment Tool"
+#test_variable2 = 6725432
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -46,7 +47,7 @@ def log():
             status = authentication.verify_user(session['user'], session['pass'])
             if status == "true":
                 session['logged_in'] = True
-                return render_template('index.html', Radiant=status)
+                return redirect(url_for("index"))
             elif status == "Password is not correct":
                 pw_error = status
             elif status == "Username not associated with an account":
@@ -70,24 +71,25 @@ def sign():
         return render_template('sign.html')
 
 #The table on index won't show it's values unless 'values' table is added under the first 'if' statement (at line 30)
-@app.route('/')
+@app.route('/dashboard')
 def index():
-    values = [
-        {'month': 'January', 'growth': 100, 'percent': 10, 'etc': 0},
-        {'month': 'February', 'growth': 200, 'percent': 15, 'etc': 0},
-        {'month': 'March', 'growth': 300, 'percent': 20, 'etc': 0},
-        {'month': 'April', 'growth': 400, 'percent': 25, 'etc': 0},
-        {'month': 'May', 'growth': 500, 'percent': 30, 'etc': 0},
-        {'month': 'June', 'growth': 600, 'percent': 35, 'etc': 0},
-        {'month': 'July', 'growth': 700, 'percent': 40, 'etc': 0},
-        {'month': 'August', 'growth': 800, 'percent': 45, 'etc': 0},
-        {'month': 'September', 'growth': 900, 'percent': 50, 'etc': 0},
-        {'month': 'October', 'growth': 1000, 'percent': 55, 'etc': 0},
-        {'month': 'November', 'growth': 1100, 'percent': 60, 'etc': 0},
-        {'month': 'December', 'growth': 1200, 'percent': 65, 'etc': 0},
-    ]
-    return render_template('index.html', values=values)
+     test = row #What displays after inspect index
+     values = [
+         {'month': 'January', 'growth': 100, 'percent': 10, 'etc': 0},
+         {'month': 'February', 'growth': 200, 'percent': 15, 'etc': 0},
+         {'month': 'March', 'growth': 300, 'percent': 20, 'etc': 0},
+         {'month': 'April', 'growth': 400, 'percent': 25, 'etc': 0},
+         {'month': 'May', 'growth': 500, 'percent': 30, 'etc': 0},
+         {'month': 'June', 'growth': 600, 'percent': 35, 'etc': 0},
+         {'month': 'July', 'growth': 700, 'percent': 40, 'etc': 0},
+         {'month': 'August', 'growth': 800, 'percent': 45, 'etc': 0},
+         {'month': 'September', 'growth': 900, 'percent': 50, 'etc': 0},
+         {'month': 'October', 'growth': 1000, 'percent': 55, 'etc': 0},
+         {'month': 'November', 'growth': 1100, 'percent': 60, 'etc': 0},
+         {'month': 'December', 'growth': 1200, 'percent': 65, 'etc': 0},
+     ]
+     return render_template('index.html', values=values, test=test)
 
 #Uncomment if you want to run without using terminal
-#if __name__ == '__main__':
-#    app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
