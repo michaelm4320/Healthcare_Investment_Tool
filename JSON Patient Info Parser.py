@@ -3,6 +3,17 @@ import os
 from datetime import date
 from datetime import datetime
 
+import pymysql
+
+conn = pymysql.connect(
+    host='hcitDB.cmswaq8q4kav.us-east-1.rds.amazonaws.com',
+    port = 3306,
+    user = 'admin',
+    password = 'POnMQIgR6AB3FbyYJ5DZ',
+    db = 'sys'
+
+)
+
 
 # Function to recursively extract key values from nested JSON objects
 def extract_key(json_obj, key):
@@ -65,10 +76,23 @@ for filename in os.listdir(directory):
             dt = datetime.strptime(find_DOB, '%Y-%m-%d')
 
             # find patient age using function
-            find_age = calculateAge(date(dt.year, dt.month, dt.day))
+            find_age = str(calculateAge(date(dt.year, dt.month, dt.day)))
             print(f"Patient Age: {find_age} years")
 
             # find patient insurance
             find_insurance = extract_key(nested_data, 'insurance')[0]
             find_insurance = find_insurance[0]['coverage']['display']
             print(f'Patient Insurance: {find_insurance}\n')
+
+            # establishes connection, inserts Patient data into table using variables
+            cur = conn.cursor()
+
+            cur.execute("INSERT INTO Patient (Id,BirthDate,FirstName,LastName,Gender,Race,Age,Insurance) "
+                        "VALUES (%s,%s,%s,%s,%s,%s,%s,%s)",
+                        (find_id, find_DOB, find_first_name, find_last_name, find_gender, find_race, find_age, find_insurance))
+
+            # commit the query
+            conn.commit()
+
+# close the connection
+conn.close()
