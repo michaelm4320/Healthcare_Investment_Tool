@@ -18,6 +18,7 @@ def extract_key(json_obj, key):
             result.extend(extract_key(item, key))
     return result
 
+
 # calculate age with variables
 def calculateAge(birthDate):
     today = date.today()
@@ -44,13 +45,6 @@ for filename in os.listdir(directory):
             find_DOB = extract_key(nested_data, 'birthDate')[0]
             print(f'Patient DOB: {find_DOB}')
 
-            # calculates date variables with DOB
-            dt = datetime.strptime(find_DOB, '%Y-%m-%d')
-
-            # find patient age using function
-            find_age = calculateAge(date(dt.year, dt.month, dt.day))
-            print(f"Patient Age: {find_age} years")
-
             # find patient First Name
             find_first_name = extract_key(nested_data, 'given')[0][0]
             print(f'Patient First Name: {find_first_name}')
@@ -61,4 +55,20 @@ for filename in os.listdir(directory):
 
             # find patient Gender
             find_gender = extract_key(nested_data, 'gender')[0]
-            print(f'Patient Gender: {find_gender}\n')
+            print(f'Patient Gender: {find_gender}')
+
+            # find patient race
+            find_race = extract_key(nested_data, 'display')[0]
+            print(f'Patient Race: {find_race}')
+
+            # calculates date variables with DOB
+            dt = datetime.strptime(find_DOB, '%Y-%m-%d')
+
+            # find patient age using function
+            find_age = calculateAge(date(dt.year, dt.month, dt.day))
+            print(f"Patient Age: {find_age} years")
+
+            # find patient insurance
+            find_insurance = extract_key(nested_data, 'insurance')[0]
+            find_insurance = find_insurance[0]['coverage']['display']
+            print(f'Patient Insurance: {find_insurance}\n')
