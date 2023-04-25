@@ -1,5 +1,7 @@
 import json
 import os
+from datetime import date
+from datetime import datetime
 
 
 # Function to recursively extract key values from nested JSON objects
@@ -15,6 +17,15 @@ def extract_key(json_obj, key):
         for item in json_obj:
             result.extend(extract_key(item, key))
     return result
+
+# calculate age with variables
+def calculateAge(birthDate):
+    today = date.today()
+    age = today.year - birthDate.year - ((today.month, today.day) <
+           (birthDate.month, birthDate.day))
+
+    return age
+
 
 # local directory
 directory = "C:\\Synthea2\\output\\EarInfectionFiles"
@@ -33,6 +44,13 @@ for filename in os.listdir(directory):
             find_DOB = extract_key(nested_data, 'birthDate')[0]
             print(f'Patient DOB: {find_DOB}')
 
+            # calculates date variables with DOB
+            dt = datetime.strptime(find_DOB, '%Y-%m-%d')
+
+            # find patient age using function
+            find_age = calculateAge(date(dt.year, dt.month, dt.day))
+            print(f"Patient Age: {find_age} years")
+
             # find patient First Name
             find_first_name = extract_key(nested_data, 'given')[0][0]
             print(f'Patient First Name: {find_first_name}')
@@ -43,4 +61,4 @@ for filename in os.listdir(directory):
 
             # find patient Gender
             find_gender = extract_key(nested_data, 'gender')[0]
-            print(f'Patient Gender: {find_gender}')
+            print(f'Patient Gender: {find_gender}\n')
