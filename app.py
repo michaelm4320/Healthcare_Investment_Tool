@@ -96,7 +96,7 @@ def sign():
 
 
 # The table on index won't show it's values unless 'values' table is added under the first 'if' statement (at line 30)
-@app.route('/dashboard')
+@app.route('/dashboard', methods=(['POST', 'GET']))
 def index():
     """
     Dashboard loads after log in or sign up, displays data, navigation to profile page, contains a log out button
@@ -112,9 +112,10 @@ def index():
         {'city': 'Tampa', 'percent': 15.61, 'future': 396400, 'predicted': 61878},
         {'city': 'Fort Myers', 'percent': 14.24, 'future': 112400, 'predicted': 16005},
     ]
+
     return render_template('dashboard.html', values=values, ages=ages, test=test, insurance=insurance, city=city)
 
-
+"""
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
     if request.method == 'POST':
@@ -136,6 +137,8 @@ def profile():
         return render_template("profile.html", name=name, email=email, first_name=first_name, last_name=last_name,
                                organization=organization, title_position=title_position, work_number=work_number,
                                mobile_number=mobile_number, email_address=email_address)
+"""
+
 
 # Uncomment if you want to run without using terminal
 # if __name__ == '__main__':
