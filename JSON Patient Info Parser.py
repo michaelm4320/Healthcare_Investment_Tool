@@ -82,14 +82,18 @@ for filename in os.listdir(directory):
             # find patient insurance
             find_insurance = extract_key(nested_data, 'insurance')[0]
             find_insurance = find_insurance[0]['coverage']['display']
-            print(f'Patient Insurance: {find_insurance}\n')
+            print(f'Patient Insurance: {find_insurance}')
+
+            # find patient current living city
+            find_city = extract_key(nested_data, 'city')[1]
+            print(f'Patient City: {find_city}\n')
 
             # establishes connection, inserts Patient data into table using variables
             cur = conn.cursor()
 
-            cur.execute("INSERT INTO Patient (Id,BirthDate,FirstName,LastName,Gender,Race,Age,Insurance) "
-                        "VALUES (%s,%s,%s,%s,%s,%s,%s,%s)",
-                        (find_id, find_DOB, find_first_name, find_last_name, find_gender, find_race, find_age, find_insurance))
+            cur.execute("INSERT INTO Patient (Id,BirthDate,FirstName,LastName,Gender,Race,Age,Insurance, City) "
+                        "VALUES (%s,%s,%s,%s,%s,%s,%s,%s, %s)",
+                        (find_id, find_DOB, find_first_name, find_last_name, find_gender, find_race, find_age, find_insurance, find_city))
 
             # commit the query
             conn.commit()
