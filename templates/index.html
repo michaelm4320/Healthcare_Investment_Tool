@@ -39,7 +39,7 @@
 			<div class="profile">
 				<img src="https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg" alt="">
 				<ul class="profile-link">
-					<li><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a href="{{ url_for('profile', filename='static/css/main.css') }}"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
 					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
 				</ul>
 			</div>
@@ -84,19 +84,19 @@
 						<table>
 							<Thead>
 								<tr>
-									<th style="width: 400px;">Month</th>
-									<th style="width: 400px;">Growth</th>
-									<th style="width: 400px;">Percent</th>
-									<th style="width: 400px;">ETC</th>
+									<th style="width: 400px;">City</th>
+									<th style="width: 400px;">Percentage of Ear Infection</th>
+									<th style="width: 400px;">Future Population</th>
+									<th style="width: 400px;">Predicted Amount of Ear Infections</th>
 								</tr>
 							</Thead>
 							<tbody>
 								{% for value in values %}
 									<tr>
-										<td>{{value.month}}</td>
-										<td>{{value.growth}}</td>
+										<td>{{value.city}}</td>
 										<td>{{value.percent}}%</td>
-										<td>{{value.etc}}</td>
+										<td>{{value.future}}</td>
+										<td>{{value.predicted}}</td>
 									</tr>
 								{% endfor %}
 							</tbody>
@@ -109,6 +109,9 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script type="text/javascript"> let test = {{ test|tojson }}</script> <!--Converts to json from python-->
+    <script type="text/javascript"> let ages = {{ ages|tojson }}</script> <!--Converts to json from python-->
+    <script type="text/javascript"> let insurance = {{ insurance|tojson }}</script> <!--Converts to json from python-->
+    <script type="text/javascript"> let city = {{ city|tojson }}</script> <!--Converts to json from python-->
 	<script src="../static/js/script.js"></script>
 </body>
 </html>

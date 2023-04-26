@@ -8,44 +8,35 @@ imgProfile.addEventListener('click', function () {
 })
 
 // APEXCHART
-var options = {
-  series: [{
-  name: test[4],
-  data: [31, 40, 28, 51, 42, 109, 100]
-}, {
-  name: 'series2',
-  data: [11, 32, 45, 32, 34, 52, 41]
-}],
-  chart: {
-  height: 350,
-  type: 'area'
-},
-dataLabels: {
-  enabled: false
-},
-stroke: {
-  curve: 'smooth'
-},
-xaxis: {
-  type: 'datetime',
-  categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
-},
-tooltip: {
-  x: {
-    format: 'dd/MM/yy HH:mm'
-  },
-},
-};
+        var options = {
+          series: [{
+          data: city
+        }],
+          chart: {
+          type: 'bar',
+          height: 500
+        },
+        plotOptions: {
+          bar: {
+            borderRadius: 4,
+            horizontal: true,
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        xaxis: {
+          categories: ['Fort Myers', 'Jacksonville', 'Miami', 'Orlando', 'Tampa'],
+        }
+        };
 
-console.log(test)
-
-var chart = new ApexCharts(document.querySelector("#chart"), options);
-chart.render();
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
 
 var AGEoptions = {
           series: [{
           name: 'Ages',
-          data: [12, 10, 30, 35, 20]
+          data: [ages[0], ages[1], ages[2], ages[3], ages[4], ages[5], ages[6]]
         }],
           chart: {
           type: 'bar',
@@ -67,14 +58,14 @@ var AGEoptions = {
           colors: ['transparent']
         },
         xaxis: {
-          categories: ['0-20', '20-40', '40-60', '60-80', '80-100'],
+          categories: ['0-15', '16-30', '31-45', '46-60', '61-75', '76-90', '91-110'],
            title: {
                 text: 'Age Group'
             }
         },
         yaxis: {
           title: {
-            text: 'Hearing Infections'
+            text: 'Ear Infections'
           }
         },
         fill: {
@@ -83,7 +74,7 @@ var AGEoptions = {
         tooltip: {
           y: {
             formatter: function (val) {
-              return "# " + val + " hearing infections"
+              return "# " + val + " ear infections"
             }
           }
         }
@@ -93,12 +84,12 @@ var AGEoptions = {
         ageChart.render();
 
         var INSURANCEoptions = {
-          series: [44, 55, 13, 43, 22, 30, 50, 21, 41],
+          series: insurance,
           chart: {
           width: 700,
           type: 'pie',
         },
-        labels: ['Medicare', 'Medicaid', 'Dual Eligible', 'Humana', 'Blue Cross Blue Shield', 'United Healthcare', 'Aetna', 'Cigna Health', 'Anthem'],
+        labels: ['Aetna', 'Anthem', 'Blue Cross Blue Shield', 'Cigna Health', 'Humana', 'Medicaid', 'NO_INSURANCE', 'UnitedHealthcare'],
         responsive: [{
           breakpoint: 480,
           options: {

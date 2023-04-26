@@ -9,14 +9,14 @@
 </head>
 <body>
 <div class="profile-page">
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="POST" action="/save_profile">
         <div class="panel-avatar">
             <div class="profile-avatar">
                 <img src="https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg"
                      class="img-circle profile-avatar" alt="User avatar">
             </div>
-            <p class="user-name">Frank Brook</p>
-            <p class="user-email">Frank@email.com</p>
+            <p class="user-name">{{ name }}</p>
+            <p class="user-email">{{ email }}</p>
         </div>
         <div class="panel-user-info">
             <div class="panel-heading">
@@ -35,20 +35,21 @@
             </div>
             <div class="form-group">
                 <label class="first-name">First Name</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="first_name" value="{{ first_name}}">
             </div>
             <div class="form-group">
                 <label class="last-name">Last Name</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="last_name" value="{{ last_name }}">
             </div>
             <div class="form-group">
                 <label class="organization">Organization</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="organization" value="{{ organization }}">
             </div>
 
             <div class="form-group">
                 <label class="title-position">Title</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="title_position" value="{{ title_position }}">
+
             </div>
         </div>
 
@@ -60,22 +61,22 @@
             <div class="panel-body">
                 <div class="form-group">
                     <label class="control-label">Work number</label>
-                    <input type="tel" class="form-control">
+                    <input type="tel" class="form-control" name="work_number" value="{{ work_number }}">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label">Mobile number</label>
-                <input type="tel" class="form-control">
+                <input type="tel" class="form-control" name="mobile_number" value="{{ mobile_number }}">
             </div>
             <div class="form-group">
                 <label class="control-label">E-mail address</label>
-                <input type="email" class="form-control">
+                <input type="email" class="form-control" name="email_address" value="{{ email_address }}"> <!--asdf -->
             </div>
             <div class="button-container">
                 <button class="cancel-button">Cancel</button>
                 <button class="save-button">Save Changes</button>
             </div>
-            <a href="index.html" class="return-link">Return home</a>
+            <a href="{{ url_for('index') }}" class="return-link">Return home</a>
         </div>
     </form>
 </div>
