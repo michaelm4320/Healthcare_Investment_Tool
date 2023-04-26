@@ -14,7 +14,7 @@ import DataBase as db
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('dashboard.html')
 
 
 @app.route('/insert', methods=['post'])
@@ -29,7 +29,7 @@ def insert():
         print(details)
         for detail in details:
             var = detail
-        return render_template('index.html', var=var)
+        return render_template('dashboard.html', var=var)
 
 
 if __name__ == "__main__":

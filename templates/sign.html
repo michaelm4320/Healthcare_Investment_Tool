@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <form method="post" style="text-align:center;">
+        <label>Email</label>
+        <br>
+        <input type="text" name="email"
+               placeholder="ghost99@gmail.com"
+               value="{{ request.form['email'] }}">
+        <br>
+{% block content %}
+<div style="color:red;">
+    {{Err0}}
+</div>
+
+        <br>
+       <select name="title">
+           <option value="0">---</option>
+           <option value="Ms.">Ms.</option>
+           <option value="Mrs.">Mrs.</option>
+           <option value="Mr.">Mr.</option>
+           <option value="Mx.">Mx.</option>
+       </select>
+       <br>
+         <br>
+       <div style="color:red;">
+    {{Err1}}
+</div>
+
+       <label>First Name</label>
+        <br>
+       <input type="text" name="1name"
+               placeholder="Jon"
+               value="{{ request.form['1name'] }}">
+       <br>
+
+<div style="color:red;">
+    {{Err2}}
+</div>
+         <br>
+              <label>Last Name</label>
+        <br>
+       <input type="text" name="2name"
+               placeholder="Snow"
+               value="{{ request.form['2name'] }}">
+       <br>
+
+<div style="color:red;">
+    {{Err3}}
+</div>
+         <br>
+       <label>Organization</label>
+        <br>
+       <input type="text" name="org"
+               placeholder="Golden Health Group"
+               value="{{ request.form['org'] }}">
+       <br>
+
+<div style="color:red;">
+    {{Err4}}
+</div>
+         <br>
+        <label> User Type </label>
+       <br>
+       <select name="u-type">
+           <option value="0">---</option>
+           <option value="71">Healthcare Service Director</option>
+           <option value="89">Capital Planner</option>
+           <option value="45">Healthcare Administrator</option>
+       </select>
+       <br>
+         <br>
+<div style="color:red;">
+    {{Err5}}
+</div>
+        <label>Password</label>
+        <br>
+       <input type="password" name="password"
+               placeholder="Password"
+               value="{{ request.form['password'] }}">
+       <br>
+         <br>
+
+<div style="color:red;">
+    {{Err6}}
+</div>
+               <label>Confirm Password</label>
+        <br>
+       <input type="password" name="password_check"
+               placeholder="Password"
+               value="{{ request.form['password_check'] }}">
+       <br>
+
+<div style="color:red;">
+    {{Err7}}
+</div>
+
+{% endblock %}
+       <br>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
