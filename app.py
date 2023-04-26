@@ -115,10 +115,11 @@ def index():
 
     return render_template('dashboard.html', values=values, ages=ages, test=test, insurance=insurance, city=city)
 
-"""
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
-    if request.method == 'POST':
+    if request.method == "GET":
+        return render_template("profile.html")
+    elif request.method == "POST":
         first_name = request.form['first_name']
         last_name = request.form['last_name']
         name = f"{first_name} {last_name}"
@@ -130,14 +131,26 @@ def profile():
         email_address = request.form['email_address']
         email = f"{email_address}"
 
-        return render_template("profile.html", name=name, email=email, first_name=first_name, last_name=last_name,
-                               organization=organization, title_position=title_position, work_number=work_number,
-                               mobile_number=mobile_number, email_address=email_address)
-    else:
-        return render_template("profile.html", name=name, email=email, first_name=first_name, last_name=last_name,
-                               organization=organization, title_position=title_position, work_number=work_number,
-                               mobile_number=mobile_number, email_address=email_address)
-"""
+        # Save the data to a file
+        with open('profile.txt', 'w') as f:
+            f.write(f'First Name: {first_name}\n')
+            f.write(f'Last Name: {last_name}\n')
+            f.write(f'Organization: {organization}\n')
+            f.write(f'Title Position: {title_position}\n')
+            f.write(f'Work Number: {work_number}\n')
+            f.write(f'Mobile Number: {mobile_number}\n')
+            f.write(f'Email Address: {email_address}\n')
+
+        return render_template('profile.html',
+                               name=name,
+                               email=email,
+                               first_name=first_name,
+                               last_name=last_name,
+                               organization=organization,
+                               title_position=title_position,
+                               work_number=work_number,
+                               mobile_number=mobile_number,
+                               email_address=email_address)
 
 
 # Uncomment if you want to run without using terminal
