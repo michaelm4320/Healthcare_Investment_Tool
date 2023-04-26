@@ -722,9 +722,12 @@ select.form-control {
 	border-radius: 10px;
 	box-shadow: 4px 4px 16px rgba(0, 0, 0, .1);
 	margin-top: 50px;
+}
+.insurance-chart-edit {
+
 	display: flex;
-justify-content: center;
-align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 /* PROFILE END */
 

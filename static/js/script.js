@@ -25,10 +25,34 @@ imgProfile.addEventListener('click', function () {
         dataLabels: {
           enabled: false
         },
-        xaxis: {
-          categories: ['Fort Myers', 'Jacksonville', 'Miami', 'Orlando', 'Tampa'],
-        }
-        };
+       xaxis: {
+    categories: ['Fort Myers', 'Jacksonville', 'Miami', 'Orlando', 'Tampa'],
+    labels: {
+      style: {
+        fontSize: '15px',
+      }
+    },
+    title: {
+      text: 'Number of Ear Infections',
+      style: {
+        fontSize: '19px',
+      }
+    }
+  },
+  yaxis: {
+    labels: {
+      style: {
+        fontSize: '15px',
+      }
+    },
+    title: {
+      text: 'Cities',
+      style: {
+        fontSize: '19px',
+      }
+    }
+  }
+};
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
@@ -59,13 +83,29 @@ var AGEoptions = {
         },
         xaxis: {
           categories: ['0-15', '16-30', '31-45', '46-60', '61-75', '76-90', '91-110'],
+          labels: {
+      style: {
+        fontSize: '15px',
+      }
+    },
            title: {
-                text: 'Age Group'
+                text: 'Age Group',
+                style: {
+        fontSize: '19px',
+      }
             }
         },
         yaxis: {
+        labels: {
+      style: {
+        fontSize: '15px',
+      }
+    },
           title: {
-            text: 'Ear Infections'
+            text: 'Number of Ear Infections',
+style: {
+        fontSize: '19px',
+      }
           }
         },
         fill: {

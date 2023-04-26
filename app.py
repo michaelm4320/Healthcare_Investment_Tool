@@ -154,5 +154,5 @@ def profile():
 
 
 # Uncomment if you want to run without using terminal
-# if __name__ == '__main__':
-# app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
